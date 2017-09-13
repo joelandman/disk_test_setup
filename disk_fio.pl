@@ -33,7 +33,7 @@ my $mode  = shift || "write";
 # jobs to keep the read/write size the same
 my $size = shift || 10;
 
-my $blocksize = shift || "128k"
+my $blocksize = shift || "128k";
 
 $size/=$njobs;
 my $size_string = sprintf "%im",int($size*1024);
