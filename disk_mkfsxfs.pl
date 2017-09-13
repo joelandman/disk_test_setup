@@ -7,7 +7,8 @@ my ($dev,@devices,$cmd,$rc,$fh,$line,$count,$rotational,@disks);
 my ($mounted,$raided);
 
 my $toppath    = shift || "/data";
-my $userot     = shift || 1;  # 1 (disk) or 0 (ssd/nvme)
+my $userot     = shift ;
+$userot = 1 if (!defined($userot));  # 1 (disk) or 0 (ssd/nvme)
 
 my $mkfs_cmd = "mkfs.xfs -f -b size=4k -K -l size=128m -s size=4k /dev/%s";
 chomp(@devices    = `ls /sys/block`);
